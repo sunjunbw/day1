@@ -10,12 +10,12 @@
             width:200px;
         }
         &:nth-child(2){
-//          width:500px;
-            flex:1;
+           flex-grow: 1;
+           flex-basis: 50%;
         }
         &:nth-child(3){
-//          width:300px;
-            flex:1;
+           flex-grow: 1;
+           flex-basis: 50%;
         }
     }
 }
