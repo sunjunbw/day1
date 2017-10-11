@@ -1,0 +1,50 @@
+$sc:25;
+@mixin dw(){
+    position: fixed;
+}
+html{
+    width:100%;
+    height: 100%;
+    body{
+        margin: 0;
+        @extend html;
+        box-sizing: border-box;
+        padding-top:(234.375+50)/$sc+rem ;
+        padding-bottom: 50/$sc+rem;
+        ul{
+            padding:0;
+            margin: 0;
+            list-style: none;
+        }
+        header{
+            @include dw;
+            width:100%;
+            height: 50/$sc+rem;
+            background: blue;
+            top:0;
+        }
+        section{
+            overflow-y: auto;
+            @extend html;
+        }
+        footer{
+           
+            @include dw;
+            bottom: 0;
+             width:100%;
+            height: 50/$sc+rem;
+            background: blue;
+        }
+        .banner{
+           
+            img{
+                 @include dw;
+                width:100%;
+                
+                top:50/$sc+rem;
+                
+            }
+        }
+    }
+    
+}
