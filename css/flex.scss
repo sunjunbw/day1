@@ -1,0 +1,21 @@
+.box{
+    display: flex;
+//  flex-wrap: nowrap;
+//  flex-direction: column;
+    flex-flow: row nowrap;
+    div{
+        background: #ccc;
+        margin: 5px;
+        &:nth-child(1){
+            width:200px;
+        }
+        &:nth-child(2){
+//          width:500px;
+            flex:1;
+        }
+        &:nth-child(3){
+//          width:300px;
+            flex:1;
+        }
+    }
+}
