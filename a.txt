@@ -1,7 +1,0 @@
-孙老师讲课内容记录
-
-git branch
-
-git checkout 分支名
-
-git branch 分支名 新建分支
