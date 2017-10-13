@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no" />
+		<title></title>
+		<style type="text/css">
+			  html,body{
+			  	width:100%;
+			  	height: 100%;
+			  	overflow: hidden;
+			  }
+			  body{
+			  	margin:0;
+			  	position: relative;
+			  }
+			  .box{
+			  	position: absolute;
+			  	left:0;
+			  	display: flex;
+			  	padding: 0;
+			  	margin:0 ;
+			  	list-style: none;
+			  	width:100%;
+			  	height: 100%;			 
+			  }
+			  .box li{
+			  	 width:100%;
+			  	 flex-shrink: 0;
+			  	box-sizing: border-box;
+			  	border: 1px solid #000;
+			  }
+		</style>
+	
+	</head>
+	<body>
+	   <ul class="box" id="box">
+	   		<li>abc1</li>
+	   		<li>abc2</li>
+	   		<li>abc3</li>
+	   		<li>abc4</li>
+	   </ul>	
+		
+		<script>
+             
+			var box=document.getElementById("box");
+			var lis=box.getElementsByTagName("li");
+			var w=lis[0].offsetWidth;
+			box.addEventListener("touchstart",function(ev){
+				ev.preventDefault();
+				var pos_init=ev.changedTouches[0].clientX;
+				var left=box.offsetLeft;
+				box.addEventListener("touchmove",function(ev){
+					var dis=ev.changedTouches[0].clientX-pos_init;
+					box.style.left=left+dis+"px";
+					console.log(box.style.left)
+				})
+				box.addEventListener("touchend",function(ev){
+					var n=Math.round(box.offsetLeft/w);
+					if(n>0){
+						n=0;
+					}
+					if(-n>=lis.length){
+						n=-(lis.length-1);
+					}
+					box.style.left=n*w+"px";
+				})
+			})
+		    
+		</script>
+	</body>
+</html>

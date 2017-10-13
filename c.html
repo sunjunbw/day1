@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<button id="btn">按钮</button>
+		<script>
+		  var btn = document.getElementById("btn");
+//			btn.onclick=function(){
+//				setTimeout(function(){
+//					this.innerHTML='HELLO';
+//				}.bind(this),1000);
+//				
+//			}
+			
+			btn.onclick=function(){
+				setTimeout(()=>{
+					this.innerHTML='HELLO';
+				},1000);
+				
+			}
+			function fun(){
+				return ()=>{
+				    return	this.a;
+				}
+			}
+			var a=1;
+			var obj={
+				a:2,
+				k:fun
+			}
+			console.log(obj.k()())
+		</script>
+	</body>
+</html>
